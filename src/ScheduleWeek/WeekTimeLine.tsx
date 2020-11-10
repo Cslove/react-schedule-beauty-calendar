@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 
 import WeekHeader from './WeekHeader';
-import { TimeLine, ScheduleCard } from '../ScheduleDay';
+import { DayTimeLine, ScheduleCard } from '../ScheduleDay';
 import WeekCard from './WeekCard';
 
 export interface WeekTimeLineProps {
@@ -46,14 +46,14 @@ const WeekTimeLine: React.FC<WeekTimeLineProps> = props => {
   return (
     <div className={prefix}>
       <WeekHeader />
-      <TimeLine scrollTo={scrollTop}>
+      <DayTimeLine scrollTo={scrollTop}>
         <div className={`${prefix}-wrapper`}>
           {weekArray.map((_, i) => (
             <div key={i} className={`${prefix}-wrapper-border`} />
           ))}
           {children}
         </div>
-      </TimeLine>
+      </DayTimeLine>
     </div>
   );
 };

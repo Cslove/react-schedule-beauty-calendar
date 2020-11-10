@@ -6,7 +6,7 @@ import ScheduleCard from './ScheduleCard';
 
 import { getNumsArray, transformTimeToHeight } from '../utils';
 
-export interface TimeLineProps {
+export interface DayTimeLineProps {
   prefix?: string;
   className?: string;
   scrollTo?: string;
@@ -16,7 +16,7 @@ export interface TimeLineProps {
 }
 
 const hours = getNumsArray(25).map(n => `${n}:00`);
-const TimeLine: React.ForwardRefRenderFunction<any, TimeLineProps> = (props, ref) => {
+const DayTimeLine: React.ForwardRefRenderFunction<any, DayTimeLineProps> = (props, ref) => {
   const {
     prefix = 'day-wrapper',
     className: clsName,
@@ -60,10 +60,12 @@ const TimeLine: React.ForwardRefRenderFunction<any, TimeLineProps> = (props, ref
             {showTime && <span className={`${prefix}-area-time`}>{v}</span>}
           </div>
         ))}
-        <section className={`${prefix}-content`} ref={ref}>{children}</section>
+        <section className={`${prefix}-content`} ref={ref}>
+          {children}
+        </section>
       </div>
     </Scrollbars>
   );
 };
 
-export default React.forwardRef(TimeLine);
+export default React.forwardRef(DayTimeLine);

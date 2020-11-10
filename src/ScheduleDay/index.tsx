@@ -1,4 +1,4 @@
-import TimeLine, { TimeLineProps } from './TimeLine';
+import DayTimeLine, { DayTimeLineProps } from './DayTimeLine';
 import ScheduleCard, { ScheduleCardProps } from './ScheduleCard';
 
-export { TimeLine, ScheduleCard, TimeLineProps, ScheduleCardProps };
+export { DayTimeLine, ScheduleCard, DayTimeLineProps, ScheduleCardProps };
